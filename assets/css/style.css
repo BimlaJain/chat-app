@@ -410,29 +410,46 @@
 
 @media (max-width:768px) {
 
-    label[for="menuIcon"] {
-        width: 30px;
-        height: 22px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        position: relative;
-        z-index: 2;
+   
+   label[for="menuIcon"]>span {
+       transition: all 200ms linear;
+   }
 
-    }
+   input:checked~label[for="menuIcon"] span:nth-child(2) {
+       opacity: 0;
+       transform: translate(-40px);
+   }
 
-    label[for="menuIcon"]>span {
-        width: 100%;
-        height: 3px;
-        background-color: white;
+   input:checked~label[for="menuIcon"] span:first-child {
+       transform: rotate(40deg);
+       transform-origin: left;
+   }
 
-
-        border-radius: 2px;
-    }
+   input:checked~label[for="menuIcon"] span:last-child {
+       transform: rotate(-40deg);
+       transform-origin: left;
+   }
+        label[for="menuIcon"] {
+            width: 30px;
+            height: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
     
-
+        }
+    
+        label[for="menuIcon"]>span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+    
+    
+            border-radius: 2px;
+        }
 
     .smallscreen {
         display: flex;
@@ -455,6 +472,7 @@
         background-color: rgba(30, 113, 255, 1);
         width: 100%;
     }
+    
         
 
     .flex-column {
